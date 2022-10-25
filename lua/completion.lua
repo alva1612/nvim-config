@@ -67,3 +67,4 @@
   }
   require('lspconfig').angularls.setup {}
   require('lspconfig').html.setup {}
+  require('lspconfig').phpactor.setup {}

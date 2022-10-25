@@ -9,6 +9,8 @@ set relativenumber
 
 
 call plug#begin('~/.vim/plugged')
+
+
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
@@ -24,6 +26,9 @@ Plug 'hrsh7th/vim-vsnip'
 
 "Plugin para javascript
 Plug 'pangloss/vim-javascript'
+
+"Plugin para phpactor
+Plug 'phpactor/phpactor', {'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o'}
 
 
 call plug#end()
