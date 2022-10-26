@@ -1,12 +1,5 @@
 
-set number
-set mouse=a
-syntax enable
-set showcmd
-set encoding=utf-8
-set showmatch
-set relativenumber
-
+:lua require('general-settings')
 
 call plug#begin('~/.vim/plugged')
 
@@ -30,6 +23,11 @@ Plug 'pangloss/vim-javascript'
 "Plugin para phpactor
 Plug 'phpactor/phpactor', {'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o'}
 
+"Plugin para cerrar brackets
+Plug 'windwp/nvim-autopairs'
+
+"Plugin para detectar indentacion
+Plug 'Darazaki/indent-o-matic'
 
 call plug#end()
 
@@ -41,6 +39,11 @@ call plug#end()
 set completeopt=menu,menuone,noselect
 :lua require('completion')
 
+"--------------------------NVIM AUTOPAIRS"
+:lua require('nvim-autopairs').setup {}
+
+"----------------------------INDENTACION SENCILLA
+:lua require('indentation')
 
 " Expand
 imap <expr> <C-j>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>'
